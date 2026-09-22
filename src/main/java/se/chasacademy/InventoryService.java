@@ -32,4 +32,14 @@ public class InventoryService {
         Product product = findProductById(id);
         product.setQuantity(quantity);
     }
+
+    public int getTotalQuantity() {
+        int total = 0;
+
+        for (Product product : inventory.getProducts()) {
+            total += product.getQuantity();
+        }
+
+        return total;
+    }
 }
